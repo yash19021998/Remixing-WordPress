@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/components/Header.jsx"],
+  "sourcesContent": ["export default function Header({title}){\n    return (\n        <header className=\"relative w-full p-6 h-85px mx-auto bg-slate-200\">\n            <h1 className=\"text-4xl\">Remixing WordPress</h1>\n        </header>\n    )\n\n\n}"],
+  "mappings": ";;;;;;AAAA;AAAe,gBAAgB,EAAC,SAAO;AACnC,SACI,oCAAC,UAAD;AAAA,IAAQ,WAAU;AAAA,KACd,oCAAC,MAAD;AAAA,IAAI,WAAU;AAAA,KAAW;AAAA;",
+  "names": []
+}

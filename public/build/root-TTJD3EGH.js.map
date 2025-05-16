@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/home/mohd.ehtishamuddin@brainvire.com/remixing-wordpress/app/root.jsx?browser", "../../app/root.jsx"],
+  "sourcesContent": ["export { default, links, meta } from \"/home/mohd.ehtishamuddin@brainvire.com/remixing-wordpress/app/root.jsx\";", "import {\n  Links,\n  LiveReload,\n  Meta,\n  Outlet,\n  Scripts,\n  ScrollRestoration,\n} from \"@remix-run/react\";\n\nimport styles from \"./tailwind.css\"\n\nexport const links = () => [\n  { rel: \"stylesheet\", href: styles },\n];\n\nexport const meta = () => ({\n  charset: \"utf-8\",\n  title: \"Remixing WordPress\",\n  viewport: \"width=device-width,initial-scale=1\",\n});\n\nexport default function App() {\n  return (\n    <html lang=\"en\">\n      <head>\n        <Meta />\n        <Links />\n      </head>\n      <body>\n        <Outlet />\n        <ScrollRestoration />\n        <Scripts />\n        <LiveReload />\n        <div id=\"detail\">\n          <Outlet />\n        </div>\n      </body>\n    </html>\n  );\n}\n"],
+  "mappings": ";;;;;;;;;;;;AAAA;;;ACAA;;;;;;AAWO,IAAM,QAAQ,MAAM;AAAA,EACzB,EAAE,KAAK,cAAc,MAAM;AAAA;AAGtB,IAAM,OAAO,MAAO;AAAA,EACzB,SAAS;AAAA,EACT,OAAO;AAAA,EACP,UAAU;AAAA;AAGG,eAAe;AAC5B,SACE,oCAAC,QAAD;AAAA,IAAM,MAAK;AAAA,KACT,oCAAC,QAAD,MACE,oCAAC,MAAD,OACA,oCAAC,OAAD,QAEF,oCAAC,QAAD,MACE,oCAAC,QAAD,OACA,oCAAC,mBAAD,OACA,oCAAC,SAAD,OACA,oCAAC,YAAD,OACA,oCAAC,OAAD;AAAA,IAAK,IAAG;AAAA,KACN,oCAAC,QAAD;AAAA;",
+  "names": []
+}
