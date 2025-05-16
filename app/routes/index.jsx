@@ -3,8 +3,15 @@ import Header from "../components/Header";
 import { useLoaderData } from "@remix-run/react";
 
 export async function loader() {
+
+    const baseUrl = process.env.WORDPRESS_API_URL;
+
+    if (!baseUrl) {
+        throw new Error("WORDPRESS_API_URL is not defined in the environment.");
+      }
+      
     // Replace with your local WordPress site's URL
-    const wordpressApiUrl = "http://localhost/remix-project/wp-json/wp/v2/posts";
+    const wordpressApiUrl = `${baseUrl}/posts`;
 
     try {
         const response = await fetch(wordpressApiUrl);

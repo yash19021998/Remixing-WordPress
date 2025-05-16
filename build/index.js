@@ -117,7 +117,11 @@ function Page({ page }) {
 // route:/home/yash.chaudhary@brainvire.com/htdocs/remixing-wordpress/app/routes/pages/$slug.jsx
 async function loader({ params }) {
   const slug = params.slug;
-  const wordpressApiUrl = `http://localhost/remix-project/wp-json/wp/v2/pages?slug=${slug}`;
+  const baseUrl = process.env.WORDPRESS_API_URL;
+  if (!baseUrl) {
+    throw new Error("WORDPRESS_API_URL is not defined in the environment.");
+  }
+  const wordpressApiUrl = `${baseUrl}/pages?slug=${slug}`;
   try {
     const response = await fetch(wordpressApiUrl);
     if (!response.ok) {
@@ -151,7 +155,11 @@ __export(slug_exports2, {
 var import_react4 = require("@remix-run/react");
 async function loader2({ params }) {
   const slug = params.slug;
-  const wordpressApiUrl = `http://localhost/remix-project/wp-json/wp/v2/posts?slug=${slug}`;
+  const baseUrl = process.env.WORDPRESS_API_URL;
+  if (!baseUrl) {
+    throw new Error("WORDPRESS_API_URL is not defined in the environment.");
+  }
+  const wordpressApiUrl = `${baseUrl}/posts?slug=${slug}`;
   try {
     const response = await fetch(wordpressApiUrl);
     if (!response.ok) {
@@ -203,7 +211,11 @@ function Post({ post }) {
 // route:/home/yash.chaudhary@brainvire.com/htdocs/remixing-wordpress/app/routes/index.jsx
 var import_react6 = require("@remix-run/react");
 async function loader3() {
-  const wordpressApiUrl = "http://localhost/remix-project/wp-json/wp/v2/posts";
+  const baseUrl = process.env.WORDPRESS_API_URL;
+  if (!baseUrl) {
+    throw new Error("WORDPRESS_API_URL is not defined in the environment.");
+  }
+  const wordpressApiUrl = `${baseUrl}/posts`;
   try {
     const response = await fetch(wordpressApiUrl);
     if (!response.ok) {
@@ -229,7 +241,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { "version": "0f7eca57", "entry": { "module": "/build/entry.client-KA2DWAA5.js", "imports": ["/build/_shared/chunk-HDUZ7ZCG.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-TH2BF4X6.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-VBUWLYRX.js", "imports": ["/build/_shared/chunk-7AZGMFEM.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/pages/$slug": { "id": "routes/pages/$slug", "parentId": "root", "path": "pages/:slug", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/pages/$slug-SLIAFJJC.js", "imports": ["/build/_shared/chunk-7AZGMFEM.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/posts/$slug": { "id": "routes/posts/$slug", "parentId": "root", "path": "posts/:slug", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/posts/$slug-GOFW5745.js", "imports": ["/build/_shared/chunk-7AZGMFEM.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-0F7ECA57.js" };
+var assets_manifest_default = { "version": "1134eecb", "entry": { "module": "/build/entry.client-KA2DWAA5.js", "imports": ["/build/_shared/chunk-HDUZ7ZCG.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-TH2BF4X6.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-2UGRSRJK.js", "imports": ["/build/_shared/chunk-7AZGMFEM.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/pages/$slug": { "id": "routes/pages/$slug", "parentId": "root", "path": "pages/:slug", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/pages/$slug-WR4UQNGL.js", "imports": ["/build/_shared/chunk-7AZGMFEM.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/posts/$slug": { "id": "routes/posts/$slug", "parentId": "root", "path": "posts/:slug", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/posts/$slug-C7LXEZAV.js", "imports": ["/build/_shared/chunk-7AZGMFEM.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-1134EECB.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

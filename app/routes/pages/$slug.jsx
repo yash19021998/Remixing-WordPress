@@ -6,7 +6,13 @@ import Page from "../../components/Page";
 // Loader function to fetch page data by slug
 export async function loader({ params }) {
   const slug = params.slug; // Get slug from the dynamic route parameter
-  const wordpressApiUrl = `http://localhost/remix-project/wp-json/wp/v2/pages?slug=${slug}`;
+  const baseUrl = process.env.WORDPRESS_API_URL;
+
+  if (!baseUrl) {
+    throw new Error("WORDPRESS_API_URL is not defined in the environment.");
+  }
+
+  const wordpressApiUrl = `${baseUrl}/pages?slug=${slug}`;
 
   try {
     const response = await fetch(wordpressApiUrl);
