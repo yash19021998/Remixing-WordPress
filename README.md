@@ -16,22 +16,26 @@ This project demonstrates how to fetch and display WordPress posts using the Wor
 
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/yash19021998/Remixing-WordPress.git
 cd Remixing-WordPress
 
-2. Install Dependencies
+---
 
-```bash
+### 2. Install Dependencies
+
 npm install
 
-3. Set WordPress API Endpoint
+--- 
+
+### 3. Set WordPress API Endpoint
 Create a .env file in the root and add:
 
 WORDPRESS_API_URL=https://your-wordpress-site.com/wp-json/wp/v2
 Replace with your actual WordPress site URL.
 
-4. Run the Development Server
+---
+### 4. Run the Development Server
 
-```bash
 npm run dev
+
+---
